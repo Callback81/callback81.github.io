@@ -1,242 +1,67 @@
+
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" class="loading">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.0.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":25,"offset":10,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
-  </script>
-
-  <meta name="description" content="抗辐照加固的三种措施，即工艺加固、设计加固和封装加固。 1 工艺加固​    材料和工艺加固就是通过改进和创新材料和工艺来达到抗辐照效果，辐照主要是通过栅氧化层中的陷阱电荷和界面态电荷来影响 MOSFET 的正常工作，因此，我们需要采取措施来改进栅氧化层的性能。目前有以下三种常见的方法：高k栅介质、深亚微米 MOS 器件和 SOI 工艺。 2 设计加固设计加固是指通过改变电路结构，来提高电路的抗辐">
-<meta property="og:type" content="article">
-<meta property="og:title" content="20200803">
-<meta property="og:url" content="http://yoursite.com/2020/08/03/%E6%8A%97%E8%BE%90%E7%85%A7%E5%8A%A0%E5%9B%BA/index.html">
-<meta property="og:site_name" content="空天站">
-<meta property="og:description" content="抗辐照加固的三种措施，即工艺加固、设计加固和封装加固。 1 工艺加固​    材料和工艺加固就是通过改进和创新材料和工艺来达到抗辐照效果，辐照主要是通过栅氧化层中的陷阱电荷和界面态电荷来影响 MOSFET 的正常工作，因此，我们需要采取措施来改进栅氧化层的性能。目前有以下三种常见的方法：高k栅介质、深亚微米 MOS 器件和 SOI 工艺。 2 设计加固设计加固是指通过改变电路结构，来提高电路的抗辐">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="file:///C:/Users/caol/AppData/Local/Temp/msohtmlclip1/01/clip_image003.png">
-<meta property="og:image" content="file:///C:/Users/caol/AppData/Local/Temp/msohtmlclip1/01/clip_image006.png">
-<meta property="article:published_time" content="2020-08-03T14:00:32.000Z">
-<meta property="article:modified_time" content="2020-08-04T01:35:36.230Z">
-<meta property="article:author" content="Liangbw">
-<meta property="article:tag" content="Antirad">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="file:///C:/Users/caol/AppData/Local/Temp/msohtmlclip1/01/clip_image003.png">
-
-<link rel="canonical" href="http://yoursite.com/2020/08/03/%E6%8A%97%E8%BE%90%E7%85%A7%E5%8A%A0%E5%9B%BA/">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'zh-CN'
-  };
-</script>
-
-  <title>20200803 | 空天站</title>
-  
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">空天站</h1>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-    </div>
-  </div>
-</div>
-
-
-
-
-<nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
-
-  </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
-
-  </li>
-  </ul>
-</nav>
-
-
-
-
-</div>
-    </header>
-
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>抗辐照加固方法 - 空天站</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="抗辐照加固的三种措施，即工艺加固、设计加固和封装加固。
+1 工艺加固​    材料和工艺加固就是通过改进和创新材料和工艺来达到抗辐照效果，辐照主要是通过栅氧化层中的陷阱电荷和界面态电荷来影响 MOS,"> 
+    <meta name="author" content="Liangbw"> 
+    <link rel="alternative" href="atom.xml" title="空天站" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
     
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
 
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 5.0.0"></head>
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
+<body class="loading">
+    <span id="config-title" style="display:none">空天站</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">抗辐照加固方法</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
 
-          <div class="content post posts-expand">
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">抗辐照加固方法</h1>
+        <div class="stuff">
+            <span>八月 03, 2020</span>
             
 
-    
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/08/03/%E6%8A%97%E8%BE%90%E7%85%A7%E5%8A%A0%E5%9B%BA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Liangbw">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="空天站">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          20200803
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-08-03 22:00:32" itemprop="dateCreated datePublished" datetime="2020-08-03T22:00:32+08:00">2020-08-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:35:36" itemprop="dateModified" datetime="2020-08-04T09:35:36+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Antirad/" itemprop="url" rel="index"><span itemprop="name">Antirad</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.9k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
         </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <p>抗辐照加固的三种措施，即工艺加固、设计加固和封装加固。</p>
+        <div class="content markdown">
+            <p>抗辐照加固的三种措施，即工艺加固、设计加固和封装加固。</p>
 <h2 id="1-工艺加固"><a href="#1-工艺加固" class="headerlink" title="1 工艺加固"></a>1 工艺加固</h2><p>​    材料和工艺加固就是通过改进和创新材料和工艺来达到抗辐照效果，辐照主要是通过栅氧化层中的陷阱电荷和界面态电荷来影响 MOSFET 的正常工作，因此，我们需要采取措施来改进栅氧化层的性能。目前有以下三种常见的方法：高k栅介质、深亚微米 MOS 器件和 SOI 工艺。</p>
 <h2 id="2-设计加固"><a href="#2-设计加固" class="headerlink" title="2 设计加固"></a>2 设计加固</h2><p>设计加固是指通过改变电路结构，来提高电路的抗辐照性能。它是目前为止最为普遍和广泛的抗辐照加固方法。设计加固的方式最大的优点是兼容商用工艺线，降低了工艺成本，在禁运限制严格的当下很适合国内发展。同时，针对不同的电路节点，设计人员可以通过判断其对辐照敏感性的不同采取不同的加固电路设计方式，以此来提高电路运行速度、降低版图面积。但是设计加固依旧会在很大程度上增加版图面积，也会使得电路延迟升高、运算速度下降。</p>
 <p>目前，设计加固的方法多种多样，主要有检错纠错码技术、保护门技术、双向互锁存储单元技术和三模冗余等</p>
@@ -291,208 +116,116 @@
 <p>屏蔽式的封装技术可以使芯片抗辐照能力提高 2-3 个数量级。能够非常有效的减轻空间及核辐照对集成电路芯片的损害，而且封装屏蔽成本低，见效快，操作简单，与之前介绍的工艺加固和设计加固相比，大大节省时间和金钱，是一种性价比很高的抗辐照加固方式。抗辐射封装加固技术的核心，是将集成电路芯片与空间辐射环境进行适当的屏蔽和物理隔离。封装加固是一种扩展 CMOS 器件使用寿命的直接而有效的途径。</p>
 <p>封装加固可选用的材料非常丰富，美国很早就开始研究封装加固的原理和材料，现在已经发展出了塑料封装，重金属封装，金属陶瓷封装等封装技术。</p>
 
-    </div>
-
-    
-    
-    
-
-      <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/Antirad/" rel="tag"># Antirad</a>
-          </div>
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2020/07/31/%E8%BE%90%E7%85%A7%E6%9D%A5%E6%BA%90%E5%92%8C%E8%BE%90%E7%85%A7%E6%95%88%E5%BA%94/" rel="prev" title="辐照来源和辐照效应">
-      <i class="fa fa-chevron-left"></i> 辐照来源和辐照效应
-    </a></div>
-      <div class="post-nav-item"></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-
-
-          </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/163/425570952.mp3'></li>
+                        
+                    
+                </ul>
+            
         </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%B7%A5%E8%89%BA%E5%8A%A0%E5%9B%BA"><span class="nav-number">1.</span> <span class="nav-text">1 工艺加固</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%AE%BE%E8%AE%A1%E5%8A%A0%E5%9B%BA"><span class="nav-number">2.</span> <span class="nav-text">2 设计加固</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1%E4%B8%89%E6%A8%A1%E5%86%97%E4%BD%99%E6%8A%80%E6%9C%AF"><span class="nav-number">2.1.</span> <span class="nav-text">2.1三模冗余技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2%E6%A3%80%E9%94%99%E7%BA%A0%E9%94%99%E7%A0%81%E6%8A%80%E6%9C%AF"><span class="nav-number">2.2.</span> <span class="nav-text">2.2检错纠错码技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3%E4%BF%9D%E6%8A%A4%E9%97%A8%E6%8A%80%E6%9C%AF"><span class="nav-number">2.3.</span> <span class="nav-text">2.3保护门技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4%E5%8F%8C%E5%90%91%E4%BA%92%E9%94%81%E5%AD%98%E5%82%A8%E5%8D%95%E5%85%83%E6%8A%80%E6%9C%AF"><span class="nav-number">2.4.</span> <span class="nav-text">2.4双向互锁存储单元技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-%E7%89%88%E5%9B%BE%E5%8A%A0%E5%9B%BA"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 版图加固</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E5%B0%81%E8%A3%85%E5%8A%A0%E5%9B%BA"><span class="nav-number">3.</span> <span class="nav-text">3封装加固</span></a></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Liangbw</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
+    <div id='gitalk-container' class="comment link"
+		data-enable='false'
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
 
-
-
-      </div>
 
     </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2020</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Liangbw</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-area"></i>
-    </span>
-    <span title="站点总字数">7k</span>
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-    <span title="站点阅读时长">6 分钟</span>
+    
+        <div class='side'>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%B7%A5%E8%89%BA%E5%8A%A0%E5%9B%BA"><span class="toc-number">1.</span> <span class="toc-text">1 工艺加固</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%AE%BE%E8%AE%A1%E5%8A%A0%E5%9B%BA"><span class="toc-number">2.</span> <span class="toc-text">2 设计加固</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1%E4%B8%89%E6%A8%A1%E5%86%97%E4%BD%99%E6%8A%80%E6%9C%AF"><span class="toc-number">2.1.</span> <span class="toc-text">2.1三模冗余技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2%E6%A3%80%E9%94%99%E7%BA%A0%E9%94%99%E7%A0%81%E6%8A%80%E6%9C%AF"><span class="toc-number">2.2.</span> <span class="toc-text">2.2检错纠错码技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3%E4%BF%9D%E6%8A%A4%E9%97%A8%E6%8A%80%E6%9C%AF"><span class="toc-number">2.3.</span> <span class="toc-text">2.3保护门技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4%E5%8F%8C%E5%90%91%E4%BA%92%E9%94%81%E5%AD%98%E5%82%A8%E5%8D%95%E5%85%83%E6%8A%80%E6%9C%AF"><span class="toc-number">2.4.</span> <span class="toc-text">2.4双向互锁存储单元技术</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-%E7%89%88%E5%9B%BE%E5%8A%A0%E5%9B%BA"><span class="toc-number">2.5.</span> <span class="toc-text">2.5 版图加固</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E5%B0%81%E8%A3%85%E5%8A%A0%E5%9B%BA"><span class="toc-number">3.</span> <span class="toc-text">3封装加固</span></a></li></ol>	
+        </div>
+    
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
-  </div>
-
-        
 
 
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
-
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
+    </div>
+</div>
 </body>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
 </html>
