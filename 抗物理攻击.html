@@ -20,15 +20,19 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":25,"offset":10,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
+  <meta name="description" content="抗物理攻击按照侵入的方式划分，针对芯片的物理攻击手段，可以分为非侵入式攻击、侵入式攻击和半侵入式攻击三种。 非侵入式攻击不需要对元器件进行初始化。攻击时可以把芯片放在测试电路 中分析，也可单独连接芯片。常用的非侵入式攻击方法有电源电压或者时钟信号的抖动，即Glitch 攻击、热攻击以及功耗分析方法等。 这种攻击很容易普及，并且重新进行攻击不需要很大的开销。另外，使用这种攻击不会留下痕迹。因此这被认">
+<meta property="og:type" content="website">
 <meta property="og:title" content="空天站">
-<meta property="og:url" content="http://yoursite.com/archives/2020/08/index.html">
+<meta property="og:url" content="http://yoursite.com/%E6%8A%97%E7%89%A9%E7%90%86%E6%94%BB%E5%87%BB.html">
 <meta property="og:site_name" content="空天站">
+<meta property="og:description" content="抗物理攻击按照侵入的方式划分，针对芯片的物理攻击手段，可以分为非侵入式攻击、侵入式攻击和半侵入式攻击三种。 非侵入式攻击不需要对元器件进行初始化。攻击时可以把芯片放在测试电路 中分析，也可单独连接芯片。常用的非侵入式攻击方法有电源电压或者时钟信号的抖动，即Glitch 攻击、热攻击以及功耗分析方法等。 这种攻击很容易普及，并且重新进行攻击不需要很大的开销。另外，使用这种攻击不会留下痕迹。因此这被认">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-04T05:20:11.297Z">
+<meta property="article:modified_time" content="2020-07-31T05:22:06.000Z">
 <meta property="article:author" content="Liangbw">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/archives/2020/08/">
+<link rel="canonical" href="http://yoursite.com/%E6%8A%97%E7%89%A9%E7%90%86%E6%94%BB%E5%87%BB">
 
 
 <script id="page-configurations">
@@ -41,7 +45,8 @@
   };
 </script>
 
-  <title>归档 | 空天站</title>
+  <title> | 空天站
+</title>
   
 
 
@@ -153,53 +158,70 @@
       <div class="main-inner">
         <div class="content-wrap">
           
+  
+  
 
-          <div class="content archive">
+          <div class="content page posts-expand">
             
 
+    
+    
+    
+    <div class="post-block" lang="zh-CN">
+      <header class="post-header">
+
+<h1 class="post-title" itemprop="name headline">
+</h1>
+
+<div class="post-meta">
   
-  
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 2 篇日志。 继续努力。</span>
-      </div>
+
+</div>
+
+</header>
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
-    </div>
+      
+      
+      <div class="post-body">
+          <h2 id="抗物理攻击"><a href="#抗物理攻击" class="headerlink" title="抗物理攻击"></a>抗物理攻击</h2><p>按照侵入的方式划分，针对芯片的物理攻击手段，可以分为非侵入式攻击、侵入式攻击和半侵入式攻击三种。</p>
+<p>非侵入式攻击不需要对元器件进行初始化。攻击时可以把芯片放在测试电路 中分析，也可单独连接芯片。常用的非侵入式攻击方法有电源电压或者时钟信号的抖动，即Glitch 攻击、热攻击以及功耗分析方法等。</p>
+<p>这种攻击很容易普及，并且重新进行攻击不需要很大的开销。另外，使用这种攻击不会留下痕迹。因此这被认为是对于硬件安全最大的威胁。</p>
+<table>
+<thead>
+<tr>
+<th align="center">攻击类型</th>
+<th>攻击方式</th>
+<th>解决方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Glitch攻击</td>
+<td>通过在信号线上叠加毛刺信号，或者外加短暂电磁瞬变或电场脉冲，使得芯片内电路工作异常的攻击手段</td>
+<td>需要集成频率检测的模块用来监测芯片的，当频率检测模块检测到频率异常时，应及时发出预警信号。</td>
+</tr>
+<tr>
+<td align="center">热攻击</td>
+<td>芯片只能是在一个特定的温度范围内才能正常工作，温度过高或者过低，都 会导致芯片内部电路工作不正常。</td>
+<td>需要集成温度传感器用来监测芯片的 工作环境温度，如果温度过高或者过低，应及时发出预警信号，对存储单元中的 机密信息进行保护或者销毁等。</td>
+</tr>
+<tr>
+<td align="center">功耗分析</td>
+<td>使用静态分析和已知密码运算的大量功耗迹线来获取隐藏信息，用统计方法鉴别功耗的微小区别，可用来恢复密钥中的单个的位信息。</td>
+<td>密码算法上采用抗DPA攻击性能强的算法。</td>
+</tr>
+</tbody></table>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-08-03T22:00:32+08:00"
-              content="2020-08-03">
-          08-03
-        </time>
       </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/08/03/%E6%8A%97%E8%BE%90%E7%85%A7%E5%8A%A0%E5%9B%BA/" itemprop="url">
-            <span itemprop="name">20200803</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+      
+      
     </div>
-  </div>
-  
-  
-  
+    
 
-  
-
+    
+    
+    
 
 
           </div>
@@ -250,6 +272,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%97%E7%89%A9%E7%90%86%E6%94%BB%E5%87%BB"><span class="nav-number">1.</span> <span class="nav-text">抗物理攻击</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
