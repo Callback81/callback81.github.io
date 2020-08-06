@@ -9,7 +9,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
-    <meta name="keywords" content="Fechin,"> 
+    <meta name="keywords" content="liangbw,"> 
     <meta name="description" content="数字中频处理软件无线电体系的顶层结构，主要包括宽带天线 、射频处理、中 频处理及基带处理几个部分。其中天线部分，可以采用多频带智能天线技术实现 ;射频处理和本振两部分实现射频信号和中频信号之间的转换,"> 
     <meta name="author" content="Liangbw"> 
     <link rel="alternative" href="atom.xml" title="空天站" type="application/atom+xml"> 
@@ -66,13 +66,17 @@
 <p>在软件无线电结构中, 下变频端将接收的有用信号由射频转换到中频进行处理;而在上变频端, 则要将信号从中频转为射频, 再由天线发射出去 。软件无线电的中频处理部分主要包括<font color = 'red'>数据上变频 、下变频处理 、A/D变换以及数控振荡器</font>等。</p>
 <h2 id="正交化"><a href="#正交化" class="headerlink" title="正交化/"></a>正交化/</h2><p>宽带数字中频必须保证滤波器的抽取比率低于 10 :1 。典型的应用是通过一个频率为有用信号中心频率的本地振荡器进行数字<font color = 'red'>混频, 将实数中频信号转换成基带信号, 从而将中心频率移到 dc处</font> 。对得到的复信号通过低通滤波, 然后抽取, 最后用与其带宽相对应的基带抽样速率对其进行抽样, 得到正交基带信号。类似于窄带数字中频, 可以用两个相同的实数滤波器串接起来完成上述过程,一个位于同相链路, 一个位于正交链路.</p>
 <h2 id="抽取"><a href="#抽取" class="headerlink" title="抽取"></a>抽取</h2><p>​    为适应不同系统的要求, 需要改变原有 采样信号的抽样速率, 这可以通过不同采样率的抽取滤波器或插值滤波器来实现。 抽取是指通过滤波从每 M 个采样中选 择一个采样点, 从而降低信号的抽样速率。 图 2( a) 给出了抽取滤波器的示意图及理想 情况下的频谱。其处理模块包括一个低通滤 波器和一个抽样率压缩器。实际上, 滤波操 作降低了输出带宽, 这样如果保持输入采样 率不变, 则会出现信号过抽样, 从而抽取处理 的输出会发生衰减。只有在输出采样满足要 求时, 才可以用 FIR 滤波器实现。这样, 抽 取率的提高和计算效率的提高是相对应的, 但若采用 IIR 滤波器, 由于对每个输入循环 IIR 滤波器都要计算反馈输出, 所以其计算 效率比相应的 IIR 滤波器实现的计算效率 低</p>
-<p>抽取是数字下变频的核心。整数倍抽取就是把采样序列 <em>x</em>(<em>n</em>)每隔 M-1 取一个， 组成新的采样序列<em>y<sub>D</sub> (</em>(<em>n</em>) ,从而降低信号的抽样速率。M 为抽取因子，是大于1的正整数。输入与输出的时域关系式为：<br>$$<br>y_D(n) = x(nM )<br>$$<br><em>x</em>(<em>n</em>)的采样频率为 <em>fs</em>。由 奈奎斯特定律可知，想避免频谱混叠，则 <em>x</em>(<em>n</em>)的带宽应不大于 <em>fs</em>/2。经过M倍抽取后的序列 <em>y</em>D(<em>n</em>)，其采样频率降为 <em>fs</em>/M，若要 <em>yD(*n)不发生频谱混叠，则带宽应不大于 *fs</em>/(2M)。显然，<em>x</em>(<em>n</em>)中频率fs/(2M)到 <em>fs</em>/2 的信号，经过抽取后，频谱将发生混叠。若将信号带宽限制在 <em>fs</em>/(2M)以内，则 <em>x</em>(<em>n</em>)与 <em>y</em>D(<em>n</em>) 均不会发生混叠现象。<em>y</em>D(<em>n</em>)的离散傅里叶变换<em>YD</em>(<em>ej</em>ω*)与<em>x</em>(<em>n</em>)的离散傅里叶变换<em>X</em>(*ejω) 的关系为式所示：<br>$$<br>Y_D(e^{jw}) = \frac1M \sum_{k=1}^{M-1}{Xe^{(w-2\pi)j}}<br>$$</p>
-<p>理想情况抽取滤波器的处理模块包括一个低通滤波器和一个抽样率压缩器。实际上, 滤波操作降低了输出带宽, 这样如果保持输入采样率不变, 则会出现信号过抽样, 从而抽取处理的输出会发生衰减。只有在输出采样满足要求时, 才可以用 FIR 滤波器实现。</p>
+<p>抽取是数字下变频的核心。整数倍抽取就是把采样序列 <em>x</em>(<em>n</em>)每隔 M-1 取一个， 组成新的采样序列<em>y<sub>D</sub> (</em>(<em>n</em>) ,从而降低信号的抽样速率。M 为抽取因子，是大于1的正整数。输入与输出的时域关系式为：</p>
+<script type="math/tex; mode=display">
+y_D(n) = x(nM )</script><p><em>x</em>(<em>n</em>)的采样频率为 <em>fs</em>。由 奈奎斯特定律可知，想避免频谱混叠，则 <em>x</em>(<em>n</em>)的带宽应不大于 <em>fs</em>/2。经过M倍抽取后的序列 <em>y</em>D(<em>n</em>)，其采样频率降为 <em>fs</em>/M，若要 <em>yD(</em>n)不发生频谱混叠，则带宽应不大于 <em>fs</em>/(2M)。显然，<em>x</em>(<em>n</em>)中频率fs/(2M)到 <em>fs</em>/2 的信号，经过抽取后，频谱将发生混叠。若将信号带宽限制在 <em>fs</em>/(2M)以内，则 <em>x</em>(<em>n</em>)与 <em>y</em>D(<em>n</em>) 均不会发生混叠现象。<em>y</em>D(<em>n</em>)的离散傅里叶变换<em>YD</em>(<em>ej</em>ω<em>)与</em>x<em>(</em>n<em>)的离散傅里叶变换</em>X<em>(</em>ejω) 的关系为式所示：</p>
+<script type="math/tex; mode=display">
+Y_D(e^{jw}) = \frac1M \sum_{k=1}^{M-1}{Xe^{(w-2\pi)j}}</script><p>理想情况抽取滤波器的处理模块包括一个低通滤波器和一个抽样率压缩器。实际上, 滤波操作降低了输出带宽, 这样如果保持输入采样率不变, 则会出现信号过抽样, 从而抽取处理的输出会发生衰减。只有在输出采样满足要求时, 才可以用 FIR 滤波器实现。</p>
 <h2 id="内插"><a href="#内插" class="headerlink" title="内插"></a>内插</h2><p>内插是数字上变频的核心。L 倍内插是指在某已知序列两个相邻采样点间等间距插入(L-1)个零点。L 为内插因子，是大于 1 的正整数。内插可看成是抽取的逆过程。设待插序列为 <em>x</em>(<em>n</em>)，经过内插后的输出序列为 <em>y</em>L(<em>n</em>)，<em>y</em>L(<em>n</em>)与 <em>x</em>(<em>n</em>)在时域上满足以下关系式：</p>
-<p>$$<br>y_L(n)= \begin{cases} x(n/L)&amp; \text{n = 0，±L，±2L，…}\ 0 &amp; \text{其他} \end{cases}<br>$$</p>
-<p>假设 <em>x</em>(<em>n</em>)的离散傅里叶变换为 <em>X</em>(<em>ejω</em>)，<em>y</em>L(<em>n</em>)的离散傅里叶变换为 <em>Y</em>L(ejω)，/它们的关系式满足:<br>$$<br>Y_L(e^{jw}) = X(e^{jwL})<br>$$<br>由上式可知，<em>Y</em>L(<em>ejω</em>)是对 <em>X</em>(<em>ejω</em>)的 L 倍压缩。内插在频域中的频谱的变化下图所示，内插后的频谱在 2π范围内产生了镜像分量。去除高频的镜像分量才能从 <em>Y</em>L(<em>ejω</em>)中恢复出原始信号。由于只需要保留[-<em>π</em>/<em>L,π</em>/<em>L</em>] 间的频谱，可通过接入低通滤波器达到目的。</p>
-<p>##</p>
-
+<script type="math/tex; mode=display">
+y_L(n)= \begin{cases} x(n/L)& \text{n = 0，±L，±2L，...}\\ 0 & \text{其他} \end{cases}</script><p>假设 <em>x</em>(<em>n</em>)的离散傅里叶变换为 <em>X</em>(<em>ejω</em>)，<em>y</em>L(<em>n</em>)的离散傅里叶变换为 <em>Y</em>L(ejω)，/它们的关系式满足:</p>
+<script type="math/tex; mode=display">
+Y_L(e^{jw}) = X(e^{jwL})</script><p>由上式可知，<em>Y</em>L(<em>ejω</em>)是对 <em>X</em>(<em>ejω</em>)的 L 倍压缩。内插在频域中的频谱的变化下图所示，内插后的频谱在 2π范围内产生了镜像分量。去除高频的镜像分量才能从 <em>Y</em>L(<em>ejω</em>)中恢复出原始信号。由于只需要保留[-<em>π</em>/<em>L,π</em>/<em>L</em>] 间的频谱，可通过接入低通滤波器达到目的。</p>
+<h1 id=""><a href="#" class="headerlink" title="#"></a>#</h1>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
                 <source type="audio/mpeg" src="">
@@ -107,7 +111,7 @@
     </div>
     
         <div class='side'>
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E4%B8%AD%E9%A2%91%E5%A4%84%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">数字中频处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E4%BA%A4%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text">正交化&#x2F;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%BD%E5%8F%96"><span class="toc-number">3.</span> <span class="toc-text">抽取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E6%8F%92"><span class="toc-number">4.</span> <span class="toc-text">内插</span></a></li></ol>	
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E4%B8%AD%E9%A2%91%E5%A4%84%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">数字中频处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E4%BA%A4%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text">正交化&#x2F;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%BD%E5%8F%96"><span class="toc-number">3.</span> <span class="toc-text">抽取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E6%8F%92"><span class="toc-number">4.</span> <span class="toc-text">内插</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number"></span> <span class="toc-text">#</span></a>	
         </div>
     
 </div>
@@ -181,6 +185,25 @@
 </div>
 
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
 

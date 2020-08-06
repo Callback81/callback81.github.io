@@ -9,7 +9,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
-    <meta name="keywords" content="Fechin,"> 
+    <meta name="keywords" content="liangbw,"> 
     <meta name="description" content="抗辐照加固的三种措施，即工艺加固、设计加固和封装加固。
 1 工艺加固​    材料和工艺加固就是通过改进和创新材料和工艺来达到抗辐照效果，辐照主要是通过栅氧化层中的陷阱电荷和界面态电荷来影响 MOS,"> 
     <meta name="author" content="Liangbw"> 
@@ -75,6 +75,7 @@
 <h3 id="2-3保护门技术"><a href="#2-3保护门技术" class="headerlink" title="2.3保护门技术"></a>2.3保护门技术</h3><p>保护门技术如图所示，它是由两个 P 管和 N 管构成，输入端为 A 和 B， 输出端为 Y，逻辑关系见下表 2-1</p>
 <center>保护门逻辑真值表</center>
 
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -83,7 +84,8 @@
 <th>Y</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>0</td>
 <td>0</td>
 <td>1</td>
@@ -103,10 +105,12 @@
 <td>0</td>
 <td>保持</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p><img src="file:///C:/Users/caol/AppData/Local/Temp/msohtmlclip1/01/clip_image003.png" alt="img"></p>
 <p>保护门电路主要用于消除单粒子翻转的影响，组合逻辑产生输出结果，在 B 输入端的前面加一级延时单元，当组合逻辑受到辐照后，可能会发生单粒子翻转，造成输出结果相反，当组合逻辑的结果翻转的时间小于延时单元设定的时间时，输出 Y 就不会产生错误，当组合逻辑的结果翻转的时间大于延时单元设定的时间时，输出 Y 还是会产生错误，因此，我们需要合理设置延时单元的时间，以达到符合要求的抗辐照性能。</p>
-<h3 id="2-4双向互锁存储单元技术"><a href="#2-4双向互锁存储单元技术" class="headerlink" title="2.4双向互锁存储单元技术"></a>2.4双向互锁存储单元技术</h3><p>基本 DICE 结构如图所示，图中可以看到，所有字母 P 的管子均为 PMOS 管构成的反相器，所有字母为 N 的管子均为 NMOS 管构成的反相器，节点 X0<del>X3 是 4 个数据锁存节点，负责存储数据。基本的 DICE 结构拥有 4 个双稳态电路，他们分别由 P1N0、P2N1、P3N2 和 P0N3 构成，这就造成了四个存储节点 X0</del>X3 存储的数据互反，四个节点的数据只会出现 0101 或 1010 的情况。CK 一般为时钟信号，它可以控制 N4<del>N7 的开关，从而进行数据的读写操作，N4</del>N7 这四个 NMOS 管在这里被当作传输管使用。</p>
+<h3 id="2-4双向互锁存储单元技术"><a href="#2-4双向互锁存储单元技术" class="headerlink" title="2.4双向互锁存储单元技术"></a>2.4双向互锁存储单元技术</h3><p>基本 DICE 结构如图所示，图中可以看到，所有字母 P 的管子均为 PMOS 管构成的反相器，所有字母为 N 的管子均为 NMOS 管构成的反相器，节点 X0~X3 是 4 个数据锁存节点，负责存储数据。基本的 DICE 结构拥有 4 个双稳态电路，他们分别由 P1N0、P2N1、P3N2 和 P0N3 构成，这就造成了四个存储节点 X0~X3 存储的数据互反，四个节点的数据只会出现 0101 或 1010 的情况。CK 一般为时钟信号，它可以控制 N4~N7 的开关，从而进行数据的读写操作，N4~N7 这四个 NMOS 管在这里被当作传输管使用。</p>
 <p><img src="file:///C:/Users/caol/AppData/Local/Temp/msohtmlclip1/01/clip_image006.png" alt="img"></p>
 <p>从图中可以看出，X0~X3 四个数据节点相互制约，X1 通过 N0 来影响 X0，同时 X0 通过 P1 来影响 X1，其他的节点原理类似，数据通过传输管存入存储节点后，在下一个数据来临之前会一直保持不变，当电路暴露在辐照环境下之后，某一个 NMOS 或 PMOS 发生了单粒子翻转效应，造成了某一存储节点的数据翻转，这个节点错误的传输会被限制，即4个存储节点不会全部出错，同时通过其他相邻的正确节点数据来修正错误的节点。</p>
 <p>DICE 结构最关键的部分就是增加了存储节点的个数，由普通结构的2个节点变为了 4 个节点，通过双稳态结构控制存储节点的数据，将4个节点有限隔离， 这样当发生短暂辐照时，一个节点的错误不会影响所有节点，错误还会被其他正确的节点所修正，前提是这个错误不是长期发生的，例如X0节点数据发生翻转， 由‘0’变为‘1’，那么N3会导通，X3 会由‘1’变为‘0’，但 X2 和X0数据不会被影响，综上所述基于该结构的存储单元具有较好的抗单粒子翻转能力。</p>
@@ -226,6 +230,25 @@
 </div>
 
 
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+        tex2jax: { inlineMath: [ ["$", "$"], ["\\(","\\)"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno",skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']},
+        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+        messageStyle: "none"
+    });
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
 
