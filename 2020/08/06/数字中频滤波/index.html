@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN" class="loading">
 <head>
-    <meta charset="UTF-8" />
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>数字中频滤波 - 空天站</title>
@@ -28,10 +28,10 @@
     <script async custom-element="amp-auto-ads"
         src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
     </script>
-<meta name="generator" content="Hexo 5.0.0"></head>
+<meta name="generator" content="Hexo 5.0.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body class="loading">
-    <span id="config-title" style="display:none">空天站</span>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><span id="config-title" style="display:none">空天站</span>
     <div id="loader"></div>
     <div id="single">
     <div id="top" style="display: block;">
@@ -64,7 +64,7 @@
         <div class="content markdown">
             <h2 id="数字中频处理"><a href="#数字中频处理" class="headerlink" title="数字中频处理"></a>数字中频处理</h2><p>软件无线电体系的顶层结构，主要包括宽带天线 、射频处理、中 频处理及基带处理几个部分。其中天线部分，可以采用多频带智能天线技术实现 ;射频处理和本振两部分实现射频信号和中频信号之间的转换;<font color = "red">中频处理部分完成信息承载信号在基带和中频之间的转换</font>;基带处理部分主要完成数据信号的调制和解调 。</p>
 <p>在软件无线电结构中, 下变频端将接收的有用信号由射频转换到中频进行处理;而在上变频端, 则要将信号从中频转为射频, 再由天线发射出去 。软件无线电的中频处理部分主要包括<font color = 'red'>数据上变频 、下变频处理 、A/D变换以及数控振荡器</font>等。</p>
-<h2 id="正交化"><a href="#正交化" class="headerlink" title="正交化/"></a>正交化/</h2><p>宽带数字中频必须保证滤波器的抽取比率低于 10 :1 。典型的应用是通过一个频率为有用信号中心频率的本地振荡器进行数字<font color = 'red'>混频, 将实数中频信号转换成基带信号, 从而将中心频率移到 dc处</font> 。对得到的复信号通过低通滤波, 然后抽取, 最后用与其带宽相对应的基带抽样速率对其进行抽样, 得到正交基带信号。类似于窄带数字中频, 可以用两个相同的实数滤波器串接起来完成上述过程,一个位于同相链路, 一个位于正交链路.</p>
+<h2 id="正交化"><a href="#正交化" class="headerlink" title="正交化"></a>正交化</h2><p>宽带数字中频必须保证滤波器的抽取比率低于 10 :1 。典型的应用是通过一个频率为有用信号中心频率的本地振荡器进行数字<font color = 'red'>混频, 将实数中频信号转换成基带信号, 从而将中心频率移到 dc处</font> 。对得到的复信号通过低通滤波, 然后抽取, 最后用与其带宽相对应的基带抽样速率对其进行抽样, 得到正交基带信号。类似于窄带数字中频, 可以用两个相同的实数滤波器串接起来完成上述过程,一个位于同相链路, 一个位于正交链路.</p>
 <h2 id="抽取"><a href="#抽取" class="headerlink" title="抽取"></a>抽取</h2><p>​    为适应不同系统的要求, 需要改变原有 采样信号的抽样速率, 这可以通过不同采样率的抽取滤波器或插值滤波器来实现。 抽取是指通过滤波从每 M 个采样中选 择一个采样点, 从而降低信号的抽样速率。 图 2( a) 给出了抽取滤波器的示意图及理想 情况下的频谱。其处理模块包括一个低通滤 波器和一个抽样率压缩器。实际上, 滤波操 作降低了输出带宽, 这样如果保持输入采样 率不变, 则会出现信号过抽样, 从而抽取处理 的输出会发生衰减。只有在输出采样满足要 求时, 才可以用 FIR 滤波器实现。这样, 抽 取率的提高和计算效率的提高是相对应的, 但若采用 IIR 滤波器, 由于对每个输入循环 IIR 滤波器都要计算反馈输出, 所以其计算 效率比相应的 IIR 滤波器实现的计算效率 低</p>
 <p>抽取是数字下变频的核心。整数倍抽取就是把采样序列 <em>x</em>(<em>n</em>)每隔 M-1 取一个， 组成新的采样序列<em>y<sub>D</sub> (</em>(<em>n</em>) ,从而降低信号的抽样速率。M 为抽取因子，是大于1的正整数。输入与输出的时域关系式为：</p>
 <script type="math/tex; mode=display">
@@ -111,14 +111,14 @@ Y_L(e^{jw}) = X(e^{jwL})</script><p>由上式可知，<em>Y</em>L(<em>ejω</em>)
     </div>
     
         <div class='side'>
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E4%B8%AD%E9%A2%91%E5%A4%84%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">数字中频处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E4%BA%A4%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text">正交化&#x2F;</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%BD%E5%8F%96"><span class="toc-number">3.</span> <span class="toc-text">抽取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E6%8F%92"><span class="toc-number">4.</span> <span class="toc-text">内插</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number"></span> <span class="toc-text">#</span></a>	
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E4%B8%AD%E9%A2%91%E5%A4%84%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">数字中频处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E4%BA%A4%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text">正交化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%BD%E5%8F%96"><span class="toc-number">3.</span> <span class="toc-text">抽取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E6%8F%92"><span class="toc-number">4.</span> <span class="toc-text">内插</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number"></span> <span class="toc-text">#</span></a>	
         </div>
     
 </div>
 
 
     </div>
-</div>
+</div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 
